@@ -29,18 +29,18 @@
 <div id="skrollr-body">
     <!-- Header -->
     <header id="kickstarter-header">
-        <div class="header-shadow">
+        <div class="header-shadow row">
             <div class="intro-text">
-                <div class="intro-heading">A Kickstarter Campaign<br>To Bridge the Divide<button id="vidpause">Pause</button></div>
+                <div class="intro-heading">A Kickstarter Campaign<br>To Bridge the Divide</div>
             </div>
         </div>
-        <br>
+        <img id="bgvid-btn" src="{% static 'img/kickstarter/video/play-btn.png' %}">
         <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
             <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
         </iframe>
         <div class="bgvid_container">
             <video autoplay loop poster="{% static 'img/kickstarter/bgvid_poster.jpg' %}" id="bgvid">
-                <source src="{% static 'video/FLE-Video.mp4' %}" type="video/mp4">
+                <source src="{% static 'img/kickstarter/video/background_video.mp4' %}" type="video/mp4">
             </video>
         </div>
     </header>
@@ -48,12 +48,15 @@
     <!-- Parallax Section -->
     <div class='parallax_or_mobile'></div>
     <script type="text/javascript">
+    $(function() {
         var ua = navigator.userAgent,
         isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
         if (isMobileWebkit) {
             $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_mobile_template.html' %}");
         }else{
+            $.getScript("{% static 'js/enquire.min.js' %}");
             $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_parallax_template.html' %}", function() {
+                // $(".parallax_or_mobile").load("{% static 'kickstarter/_kickstarter_portfolio.html' %}", function() {
                     $.getScript("{% static 'js/imagesloaded.js' %}", function() {
                         $.getScript("{% static 'js/skrollr.js' %}", function() {
                             $.getScript("{% static 'js/_main.js' %}");
@@ -61,6 +64,7 @@
                 });
             });
         }
+    });
     </script>
 
     <!-- Kolibri Features Section -->
@@ -77,30 +81,20 @@
         {% include "main/partials/_kickstarter_about.html" %}
     </section>
 
-    <!-- Team Section -->
-    <!-- <section id="team" class="bg-light-gray not-parallax-section">
-        {% include "main/partials/_kickstarter_team.html" %}
-    </section> -->
 
     <!-- Contact Section -->
     <section id="contact" class="not-parallax-section">
+        <div id="overlay"></div>
         <div class="container">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Join our Kickstarter Mailing List!</h2>
             </div>
-            <h3 class="mailing_label text-muted">See how you can be part of the solution</h3>
+            <h3 class="mailing_label text-muted">SEE HOW YOU CAN HELP BRIDGE THE DIVIDE</h3>
             <br>
-
-            <!-- Begin MailChimp Signup Form  -->
-            <!-- <div id="mc_embed_signup">
-                <form action="//learningequality.us6.list-manage.com/subscribe/post?u=023b9af05922dfc7f47a4fffb&amp;id=2cff471b25" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                    <div class="e2">
-                        <input type="email" value="" name="EMAIL" class="required email email_input_k" id="mce-EMAIL" placeholder="Email Address">
-                        <input type="submit" value="Join the Cause" name="subscribe" id="mc-embedded-subscribe" class="btn btn-xl email_submit_k">
-                    </div>
-                </form>
-            </div> -->
-            <iframe src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
+            <div class="bridge-photo">
+                <img src="{% static 'img/kickstarter/bridge-photo.png' %}">
+            </div>
+            <iframe id="footer-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="200">
                 <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
             </iframe>
             <!-- End mc_embed_signup -->
@@ -123,13 +117,12 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="my_col">
                         <div class="modal-body">
                             <h2>Preconfigured Tablet</h2>
                             <p class="item-intro text-muted">An affordable Android tablet with enough power to run Kolibri smoothly</p>
-                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/peer_to_peer_modal_img.png' %}" alt="">
+                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/preconfig_tablet.jpg' %}" alt="">
                             <p class="center">We tested thoroughly on most affordable tablets to ensure when we start to order the tablet, our software will run snappily on it.</p>
-                           <!--  <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p> -->
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
                         </div>
                     </div>
@@ -149,23 +142,16 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="my_col">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
                             <h2>Content Curation</h2>
                             <p class="item-intro text-muted">A tool for sharing your knowledge with people in need</p>
-                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/content_curation_modal_img.png' %}" alt="">
+                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/content_curation.gif' %}" alt="">
                             <p class="big"><mark>&#9733 Remix existing channels:  </mark>   Teachers and organizations have the freedom to combine content from various channels to create unique curriculum that caters to students’ specific needs. For example, an instructor could create a new channel by combining math content from the Khan Academy channel and geography content from the OpenStax channel, allowing them to easily integrate a variety of learning material to customize their curriculum.</p>
                             <p class="big"><mark>&#9733 Upload exclusively new content:  </mark>   There might be times when instructors have come up with their own learning material that they have found works effectively. When this happens, they can upload their content to Kolibri, in order to share it with other instructors who may find it useful for their own students.</p>
                             <p class="big"><mark>&#9733 Alternatively, one can rearrange an existing channel:  </mark>   Instructors also have the ability to customize content that already exists in a channel. If they think that certain lessons in a channel may be too challenging for their students, for example, they can remove these lessons and present their students only with the material that is appropriate for them.</p>
                             <p class="big"><mark>&#9733 Integrate new and existing content:  </mark>   Kolibri also allows instructors to combine existing content with their own. If an organization like UNICEF knows from experience that certain math lessons are favored by students, and they have also noticed that some of their own original exercises are effective, they can create a new channel and combine their content with pre-existing content from another channel to optimize their curriculum.</p>
-                            <!-- <p>
-                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
-                            <ul class="list-inline">
-                                <li>Date: July 2014</li>
-                                <li>Client: Round Icons</li>
-                                <li>Category: Graphic Design</li>
-                            </ul> -->
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
                         </div>
                     </div>
@@ -185,7 +171,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="my_col">
                         <div class="modal-body">
                             <h2>Peer to Peer Sync</h2>
                             <p class="item-intro text-muted">Discover new knowledge as you go, even without Internet connection</p>
@@ -221,7 +207,7 @@
                             </center>
                             <img id="vec_bg_img" src="{% static 'img/kickstarter/portfolio/5.png' %}" style="display:none"><!-- a hack to get the image url -->
                             <script src="{% static 'js/action updated.js' %}"></script>
-                            <mark id="mark">&#9757 You can select the elements on the vedio with your mouse and change their position and size.</mark>
+                            <mark id="mark">&#9757 Select the elements on the video with your mouse and change their position and size.<br>Try it while the video is playing!</mark>
                             <br>
                             <br>
                             <div id="button-wrapper">
@@ -231,7 +217,7 @@
                             </div>
                             <br>
                             <br>
-                            <p class="center vector-description">Make downloading and transferring content a fast and easy process. We found a way to compress hundreds of gigabytes of content into just a few megabytes, and this is done by converting only the necessary parts of content items to scalable components.</p>
+                            
                             <!-- <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p> -->
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
                         </div>
@@ -273,9 +259,6 @@
     <script src="{% static 'js/wow.js' %}"></script>
     <script>
         new WOW().init();
-       /* $(".action-button").fadeIn(5000, function(){
-            $('.village').css("background-color", "red");
-        });*/
 
     </script>
 </div>

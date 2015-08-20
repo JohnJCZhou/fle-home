@@ -1,6 +1,6 @@
 body {
   overflow-x: hidden;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
 }
 #footer {
@@ -62,12 +62,30 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat";
   text-transform: uppercase;
   font-weight: 700;
 }
 .img-centered {
   margin: 0 auto;
+}
+.tabelt_specs {
+  color: white;
+  font-family: "Montserrat";
+  font-style: italic;
+  font-size: 35px;
+  position: relative;
+  margin-bottom: 40px;
+  background: url('../img/kickstarter/portfolio/preconfig_tablet.jpg') no-repeat;
+  background-position: center center;
+  min-height: 522px;
+  min-width: 100px;
+  padding: 100px;
+}
+.specs {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 5px;
 }
 .bg-light-gray {
   background-color: #f7f7f7;
@@ -79,7 +97,7 @@ h6 {
   color: white;
   background-color: #fed136;
   border-color: #fed136;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -123,7 +141,7 @@ fieldset[disabled] .btn-primary.active {
   color: #1a1a1a;
   background: rgb(138, 230, 92);
   border-color: rgb(138, 230, 92);
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   text-transform: uppercase;
   font-weight: 700;
   border-radius: 3px;
@@ -159,7 +177,7 @@ fieldset[disabled] .btn-primary.active {
   float: left;
   width: 240px;
   background-color: white;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   font-weight: 700;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -219,7 +237,7 @@ fieldset[disabled] .btn-primary.active {
     float: left;
     width: 350px;
     background-color: white;
-    font-family: "Lato", sans-serif;
+    font-family: "Open Sans";
     font-weight: 700;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -252,6 +270,10 @@ fieldset[disabled] .btn-primary.active {
     font-size: 22px !important;
     font-weight: 100;
   }
+  .tabelt_specs {
+    font-size: 24px;
+    padding: 20px;
+  }
 }
 
 #mce-error-response{
@@ -264,7 +286,7 @@ fieldset[disabled] .btn-primary.active {
   /*width: 100%;*/
   clear:both;
   text-align: center;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   font-weight: 100;
   font-size: 18px;
   margin-top: 100px;
@@ -336,14 +358,14 @@ header .intro-text {
   padding-bottom: 50px;
 }
 header .intro-text .intro-lead-in {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat";
   font-style: italic;
   font-size: 25px;
   line-height: 22px;
   margin-bottom: 25px;
 }
 header .intro-text .intro-heading {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat";
   text-transform: uppercase;
   font-weight: 900;
   font-size: 55px;
@@ -354,6 +376,9 @@ header .intro-text .intro-heading {
   z-index: 3;
   /*bottom: 60px;*/
 }
+.intro-heading span {
+  font-size: 50px;
+}
 .kickstarter-about-title {
   margin-bottom: 7%;
 }
@@ -363,7 +388,7 @@ header .intro-text .intro-heading {
 .header-shadow {
   z-index: 2;
   background: rgba(0, 0, 0, 0.4);
-  height: 100vh !important;
+  height: 100vh;
 }
 .header-shadow img {
   max-width: 85%;
@@ -373,7 +398,6 @@ header .intro-text .intro-heading {
 }
 #header-mailchimp {
   position: relative;
-  top: -30vh;
   z-index: 999;
 }
 .bgvid_container{
@@ -394,6 +418,18 @@ video#bgvid {
   min-height: 100%;
   min-width: 100%;
 }
+#to {
+  font-size: 29px;
+  position: relative;
+  left: 10px;
+  font-family: "Montserrat";
+}
+#bridge {
+  font-size: 75px;
+  font-family: "Montserrat";
+  position: relative;
+  top: 5px;
+}
 
 @media (min-width: 768px) {
   .header-shadow img {
@@ -404,12 +440,12 @@ video#bgvid {
     padding: 140px 0 0 0;
   }
   header .intro-text .intro-heading {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat";
   text-transform: uppercase;
-  font-weight: 900;
-  font-size: 55px;
+  font-weight: 400;
+  font-size: 40px;
   line-height: 56px;
-  text-shadow: -3px 3px #000000;
+  text-shadow: -2px 2px #000000;
   /*margin-bottom: 50px;*/
   position: relative;
   z-index: 3;
@@ -476,11 +512,12 @@ section h2.section-heading {
 section h3.section-subheading {
   line-height: inherit;
   font-size: 1.2em;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   text-transform: none;
   font-style: normal;
   font-weight: 300;
-  margin-bottom: 75px;
+  max-width: 750px;
+  margin: 0 auto 75px auto;
 }
 @media (min-width: 768px) {
   section {
@@ -535,17 +572,18 @@ section h3.section-subheading {
   margin: 0;
 }
 #portfolio .portfolio-item .portfolio-caption {
-  max-width: 500px;
+  /*max-width: 500px;*/
   background-color: white;
   text-align: center;
   padding: 15px 15px 35px 15px;
   cursor: pointer;
   margin: auto;
+  height: 460px;
 }
 #portfolio .portfolio-item .portfolio-caption h4 {
   text-transform: none;
-  margin: 10px 0 0 0;
-  font-size: 1.3em;
+  margin: 30px 0 0 0;
+  font-size: 1.2em;
   padding-bottom: 5px;
 }
 #portfolio .portfolio-item .portfolio-caption p {
@@ -575,7 +613,7 @@ section h3.section-subheading {
 }
 .barrier-title span,
 .solution-title span {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat";
 }
 .barrier-title i,
 .barrier-title span,
@@ -592,7 +630,7 @@ section h3.section-subheading {
 }
 .portfolio-barrier-box,
 .portfolio-solution-box {
-  padding: 0 11px;
+  padding: 10px 35px;
 }
 .portfolio-barrier-box p,
 .portfolio-solution-box p {
@@ -604,7 +642,7 @@ section h3.section-subheading {
 .portfolio-caption .text-muted {
   color: #3F3F3F;
   font-style: normal !important;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   padding-bottom: 5px;
   position: relative;
   top: -7px;
@@ -647,10 +685,25 @@ section h3.section-subheading {
   border-width: .5em 0 0 .5em;
 }
 .solution-title {
-  margin-top: 8%;
+  margin-top: 4%;
 }
 /* END FEATURE RIBBONS */
 
+@media (max-width: 991px) {
+  .portfolio-barrier-box,
+  .portfolio-solution-box {
+    position: relative;
+    top: 30px;
+    padding: 10px 0px;
+    right: 5px;
+  }
+  #portfolio .portfolio-item .portfolio-caption {
+    height: 100%;
+  }
+  .portfolio-solution-box p {
+    margin-bottom: 20px !important;
+  }
+}
 @media (max-width: 767px) {
   .portfolio-barrier-box {
     margin-bottom: 25px;
@@ -658,7 +711,11 @@ section h3.section-subheading {
   .portfolio-caption:before {
     display: none;
   }
+  #portfolio .portfolio-item .portfolio-caption {
+    height: 100%;
+  }
 }
+
 .timeline {
   list-style: none;
   padding: 0;
@@ -756,7 +813,7 @@ section h3.section-subheading {
 .timeline .timeline-body > p,
 .timeline .timeline-body > ul {
   margin-bottom: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
 }
 .timeline li div p a {
   font-weight: bold;
@@ -836,6 +893,9 @@ section h3.section-subheading {
     padding: 0 100px 20px 20px;
   }
 }
+.ka-lite-header {
+  text-align: center;
+}
 #about {
   background: #8670A1;
   color:#fff;
@@ -847,14 +907,14 @@ section h3.section-subheading {
 #about .text-muted {
   color: #fff;
   font-weight: 300;
-  font-size:1.5em;
-  line-height: 1.2;
-  font-family: 'Lato', sans-serif;
+  font-size: 1.3em;
+  line-height: 1.35;
+  font-family: 'Open Sans';
 }
 #about .timeline-individual-heading{
   margin-top: 2%;
   font-size: 2.5em;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans';
   font-weight: 300;
   letter-spacing: -0.07em
 }
@@ -894,7 +954,7 @@ section h3.section-subheading {
 
 /* LAST CALL TO ACTION */
 section#contact {
-  background: url('../img/kickstarter/cover.jpg');
+  /*background: url('../img/kickstarter/cover.jpg');*/
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -902,19 +962,11 @@ section#contact {
   -o-background-size: cover;
   margin-bottom: -44px;
   padding: 0;
-  height: 100vh;
+  height: 100%;
 }
 section#contact .section-heading {
   color: white;
   margin-bottom: 10px;
-}
-section#contact #overlay {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  background: black;
-  opacity: 0.5;
-  z-index: 0
 }
 section#contact .form-control:focus {
   border-color: #fed136;
@@ -927,16 +979,19 @@ section#contact .text-danger {
 #contact .text-center,
 #contact .text-muted {
   position: relative;
-  top: 13vh;
+  top: 40px;
   z-index: 1;
 }
 #contact .text-muted {
   margin-top: 20px;
+  font-family: "Montserrat";
+  color: #8670A1;
 }
 section#contact .bridge-photo,
 section#contact .section-heading,
 #footer-mailchimp {
   z-index: 1;
+  color: #8670A1;
 }
 section#contact img {
   max-width: 80%;
@@ -949,9 +1004,6 @@ section#contact img {
   section#contact img {
     display: none;
   }
-  #footer-mailchimp {
-    bottom: -25vh !important;
-  }
 }
 
 footer {
@@ -960,14 +1012,14 @@ footer {
 }
 footer span.copyright {
   line-height: 40px;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   text-transform: uppercase;
   text-transform: none;
 }
 footer ul.quicklinks {
   margin-bottom: 0;
   line-height: 40px;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   text-transform: uppercase;
   text-transform: none;
 }
@@ -1011,14 +1063,14 @@ ul.social-buttons li a:active {
 }
 .portfolio-modal .modal-content h2 {
   margin-bottom: 15px;
-  font-size: 3em;
+  font-size: 2.5em;
 }
 .portfolio-modal .modal-content p {
   margin-bottom: 30px;
 }
 .portfolio-modal .modal-content p.item-intro {
   margin: 20px 0 30px;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   font-style: italic;
   font-size: 16px;
 }
@@ -1141,7 +1193,7 @@ mark{
   margin: 0;
   text-align: justify;
   font-size: 16px;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   line-height: 1.4;
 }
 .colored-container {
@@ -1152,19 +1204,31 @@ mark{
 /* MAILCHIMP MODAL */
 .mailing_label {
   text-transform: none;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   color: white;
   text-align: center;
   position: relative;
-  font-size: 32px;
+  font-size: 21px;
   font-weight: 100;
+  z-index: 3;
 }
+/*.mailing_label2 {
+  font-family: "Open Sans";
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+  text-transform: none;
+  font-weight: 100;
+  top: 17px;
+}*/
 .email_input_k::selection {
   background: #55C21E;
 }
 #footer-mailchimp {
   position: relative;
   bottom: -7vh;
+  margin-bottom: 50px;
 }
 
 /* BACK TO TOP BUTTON */
@@ -1173,7 +1237,7 @@ mark{
   bottom: 0.5em;
   right: 10px;
   text-decoration: none;
-  color: #fed136;
+  color: #8ae65c;
   background-color: #000000;
   font-size: 20px;
   display: none;
@@ -1184,16 +1248,16 @@ mark{
   border-radius: 100%;
   width: 60px;
   height: 60px;
-  -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
-  transition: border 0.3s, background 0.3s, color 0.3s;
+  -webkit-transition: border 0.2s, background 0.2s, color 0.2s;
+  transition: border 0.2s, background 0.2s, color 0.2s;
 }
 
 .back-to-top:hover {    
-  background-color: #fed136;
+  background-color: #8ae65c;
   color: black;
   border: 4px solid black;
-  -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
-  transition: border 0.3s, background 0.3s, color 0.3s;
+  -webkit-transition: border 0.2s, background 0.2s, color 0.2s;
+  transition: border 0.2s, background 0.2s, color 0.2s;
 }
 
 /* Vectorized Video */
@@ -1227,4 +1291,22 @@ mark{
   left: 50vw;
   transform: translate(-35px,-35px);
   visibility: hidden;
+}
+
+.social_btns {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #E6B8E6;
+  /*position: relative;*/
+}
+.social_btns div{
+  display:inline-block;
+  color: #8670A1;
+}
+.social_btns div:hover{
+  color: #FED136;
+}
+.space_taker {
+  width: 10vw;
+  max-width: 100px;
 }
